@@ -3,8 +3,8 @@
 	<channel>
 		<title>ktcsi blog</title>
 		<description>ブログについて</description>
-		<link>https://scotte.github.io/jekyll-clean/jekyll-clean</link>
-		<atom:link href="https://scotte.github.io/jekyll-clean/jekyll-clean/feed.xml" rel="self" type="application/rss+xml" />
+		<link>https://kcsi.github.io/</link>
+		<atom:link href="https://kcsi.github.io//feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Using Org-mode to blog with Jekyll</title>
@@ -17,10 +17,18 @@
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;2&lt;/span&gt; theme&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;p&gt;
+jekyll-clean
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
 				<pubDate>Sat, 11 Jun 2016 00:00:00 +0900</pubDate>
-				<link>https://scotte.github.io/jekyll-clean/jekyll-clean/2016/06/org2jekyll</link>
-				<guid isPermaLink="true">https://scotte.github.io/jekyll-clean/jekyll-clean/2016/06/org2jekyll</guid>
+				<link>https://kcsi.github.io//2016/06/org2jekyll</link>
+				<guid isPermaLink="true">https://kcsi.github.io//2016/06/org2jekyll</guid>
 			</item>
 		
 			<item>
@@ -41,8 +49,8 @@
 
 </description>
 				<pubDate>Fri, 10 Jun 2016 22:07:48 +0900</pubDate>
-				<link>https://scotte.github.io/jekyll-clean/jekyll-clean/2016/06/welcome-to-jekyll</link>
-				<guid isPermaLink="true">https://scotte.github.io/jekyll-clean/jekyll-clean/2016/06/welcome-to-jekyll</guid>
+				<link>https://kcsi.github.io//2016/06/welcome-to-jekyll</link>
+				<guid isPermaLink="true">https://kcsi.github.io//2016/06/welcome-to-jekyll</guid>
 			</item>
 		
 	</channel>

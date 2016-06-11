@@ -14,3 +14,5 @@ published: true
 * org to jekyll test
 参考にしたページ
 [[http://mashu.github.io/2015/07/19/Debian-Jekyll-Org.html][Using Org-mode to blog with Jekyll]]
+* theme
+jekyll-clean
