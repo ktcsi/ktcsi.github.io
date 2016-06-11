@@ -1,0 +1,15 @@
+#+BEGIN_HTML
+---
+layout: post
+title: Using Org-mode to blog with Jekyll
+published: true
+---
+#+END_HTML
+#+TITLE: 2016-06-11-org2jekyll
+#+DATE: <2016-06-11 Sat>
+#+AUTHOR: ktcsi
+#+EMAIL: hoge@mail.com
+#+OPTIONS: toc:nil
+#+SELECT_TAGS: export
+* org to jekyll test
+this is test.
