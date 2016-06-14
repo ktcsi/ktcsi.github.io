@@ -1,0 +1,33 @@
+---
+layout: default
+title: Category
+---
+{% include category.html %}
+
+<div class="well">
+  {% comment %}
+  =======================
+  The purpose of this snippet is to list all your posts posted with a certain cate.
+  =======================
+  {% endcomment %}
+  {% for cate in category %}
+  <h1 id="{{ cate | slugify }}">{{ cate }}</h1>
+  <ul>
+    {% for post in site.posts %}
+    {% if post.category contains cate %}
+    <li>
+      <h2>
+	<a href="{{ post.url }}">
+	  {{ post.title }}
+	  <small>{{ post.date | date_to_string }}</small>
+	</a>
+	{% for cate in post.category %}
+	<a class="cate" href="#{{ cate | slugify }}">{{ cate }}</a>
+	{% endfor %}
+      </h2>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>

@@ -1,0 +1,20 @@
+#+BEGIN_HTML
+---
+layout: post
+title: FPGAボードで学ぶ組込みシステム開発入門[SX-Card3編]
+published: true
+category: IT
+tag: [FPGA, Spartan-6, SX-Card3]
+---
+#+END_HTML
+#+TITLE:
+#+DATE: <2016-06-14 Tue>
+#+AUTHOR: ktcsi
+#+EMAIL: hoge@mail.com
+#+OPTIONS: toc:2 num:nil
+#+SELECT_TAGS: export
+* FPGAボードで学ぶ組込みシステム開発入門[SX-Card3編]
+#+begin_example
+小林 優(2013).  FPGAボードで学ぶ組込みシステム開発入門[Xilinx編] 技術評論社
+#+end_example
+** 

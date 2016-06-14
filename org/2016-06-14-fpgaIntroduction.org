@@ -1,0 +1,59 @@
+#+BEGIN_HTML
+---
+layout: post
+title: FPGAボードで学ぶ組込みシステム開発入門[SX-Card3編]
+published: true
+category: IT
+tag: [FPGA, Spartan-3, SX-Card3]
+---
+#+END_HTML
+#+TITLE:
+#+DATE: <2016-06-14 Tue>
+#+AUTHOR: ktcsi
+#+EMAIL: hoge@mail.com
+#+OPTIONS: toc:nil num:nil
+#+SELECT_TAGS: export
+* FPGAボードで学ぶ組込みシステム開発入門[SX-Card3編]
+#+begin_example
+小林 優(2013).  FPGAボードで学ぶ組込みシステム開発入門[Xilinx編] 技術評論社
+#+end_example
+** 1 FPGAボード
+*** 1-1 FPGA
+参考書の表1-1(Spartan-3E)に対応する表
+#+CAPTION: FPGA(Spartan-3A DSP XC3SD1800A)のFPGA規模
+| Device                 | XC3SD1800A                                |
+| Package Type           | 676-ball Fine-Pitch Ball Grid Array(FBGA) |
+| Speed Grade            | 4                                         |
+| Temp Range             | Commercial(0℃ to 85℃)                     |
+| System Gates           | 1800K                                     |
+| Equivalent Logic Cells | 37,440                                    |
+| Total CLBs             | 4,160                                     |
+| Total Slices           | 16,640                                    |
+| Block RAM Bits         | 1512K                                     |
+| DSP48As                | 84                                        |
+| DCMs                   | 8                                         | 
+CLB = Configurable Logic Block, 
+DCM = Digital Clock Manager, 
+LUT = Look Up Table  
+*** 1-2 使用するFPGAボード
+参考書の表1-2に対応する表
+#+CAPTION: 使用するFPGAボード(SX-Card3)
+| メーカ         |         Prime Systems, Inc. |
+| ボード名       |               SX-Card3/DSP4 |
+| FPGA           |              Spartan-3A DSP |
+| 外部メモリ     | 18Mbit同期SRAM（512K x 36b) |
+| 単体LED        |                           8 |
+| 汎用4bitDIP SW |                           1 |
+| 汎用タクトSW   |                           1 |
+| 高速ユーザIO   |                         200 |
+| 汎用ユーザIO   |                        34x2 |
+| GPIO           |                        8bit |
+使用できるボードという理由ではじめたので、このボードでどこまで参考書を適用できるかは不明。
+** 2 回路設計体験
+** 3 進んだ回路設計
+** 4 MicroBlaze MCS
+** 5 MCSプログラミング
+** 6 自作周辺回路
+** 7 周辺回路設計
+** 8 外部メモリとグラフィック表示回路
+** 9 CMOSカメラ

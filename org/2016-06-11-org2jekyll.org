@@ -1,18 +1,29 @@
 #+BEGIN_HTML
 ---
 layout: post
-title: Using Org-mode to blog with Jekyll
+title: GitHub Pages
 published: true
+category: IT
+tag: [org-mode, web, jekyll]
 ---
 #+END_HTML
-#+TITLE: 2016-06-11-org2jekyll
+#+TITLE:
 #+DATE: <2016-06-11 Sat>
 #+AUTHOR: ktcsi
 #+EMAIL: hoge@mail.com
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil num:nil
 #+SELECT_TAGS: export
-* org to jekyll test
+* about this post
+GitHub Pages 静的サイトに関するメモ
+- GitHub Pages
+- org-mode
+- jekyll
+- jekyll-clean
+* org to jekyll
 参考にしたページ
 [[http://mashu.github.io/2015/07/19/Debian-Jekyll-Org.html][Using Org-mode to blog with Jekyll]]
 * theme
-jekyll-clean
+[[https://github.com/scotte/jekyll-clean.git][jekyll-clean]]
+* tag and category
+参考にしたページ
+[[https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/][Use Tags and Categories in your Jekyll based Github Pages without plugins]]

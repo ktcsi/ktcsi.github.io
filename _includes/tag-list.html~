@@ -1,0 +1,6 @@
+<h1>Tag</h1>
+<ul>
+{% for tag in tags %}
+	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+{% endfor %}
+</ul>

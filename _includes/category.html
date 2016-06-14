@@ -1,0 +1,28 @@
+{% comment %}
+=======================
+The following part extracts all the category from your posts and sort category, so that you do not need to manually collect your category to a place.
+=======================
+{% endcomment %}
+{% assign rawcategory = "" %}
+{% for post in site.posts %}
+	{% assign tcategory = post.category | join:'|' | append:'|' %}
+	{% assign rawcategory = rawcategory | append:tcategory %}
+{% endfor %}
+{% assign rawcategory = rawcategory | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated category and invalid category like blank cate.
+=======================
+{% endcomment %}
+{% assign category = "" %}
+{% for cate in rawcategory %}
+	{% if cate != "" %}
+		{% if category == "" %}
+			{% assign category = cate | split:'|' %}
+		{% endif %}
+		{% unless category contains cate %}
+			{% assign category = category | join:'|' | append:'|' | append:cate | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
