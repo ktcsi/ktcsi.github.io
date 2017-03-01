@@ -1,8 +1,0 @@
-{% include category.html %}
-
-<h1>Category</h1>
-<ul>
-  {% for cate in category %}
-    <li><a href="{{site.baseurl}}/category.html#{{ cate | slugify }}">{{ cate }}</a></li>
-  {% endfor %}
-</ul>
