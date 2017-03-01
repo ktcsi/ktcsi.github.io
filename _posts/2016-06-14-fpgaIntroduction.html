@@ -11,6 +11,10 @@ tag: [FPGA, Spartan-3, SX-Card3]
 <pre class="example">
 小林 優(2013).  FPGAボードで学ぶ組込みシステム開発入門[Xilinx編] 技術評論社
 </pre>
+<p>
+この書籍を参考に手元のボード(SX-Card3)を使って、FPGAに入門。
+権利関係に気をつける。
+</p>
 </div>
 <div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1">1 FPGAボード</h3>
@@ -164,9 +168,78 @@ LUT = Look Up Table
 </p>
 </div>
 </div>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">1-3 コンフィギュレーション</h4>
+<div class="outline-text-4" id="text-1-1-3">
+</div><div id="outline-container-sec-1-1-3-1" class="outline-5">
+<h5 id="sec-1-1-3-1">USBコンフィギュレーション</h5>
+<div class="outline-text-5" id="text-1-1-3-1">
+<p>
+USB経由によって複数のコンフィグデータを瞬時に書き換えられる。
+SX-Card3ボードはリファレンスアプリケーション起動時に自動的にコンフィグする機能(オートコンフィグ機能)を持つ。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1-3-2" class="outline-5">
+<h5 id="sec-1-1-3-2">コンフィグROM</h5>
+<div class="outline-text-5" id="text-1-1-3-2">
+<p>
+Spartan3A-DSP搭載ボードは、チップ外部のコンフィグ用ROMを用意。
+Xilinx専用のダウンロードケーブルを利用して書き込む。
+USBからコンフィグROMにプログラムすることはできない。
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
 <h3 id="sec-1-2">2 回路設計体験</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">2-1 Xilinx ISE</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Vivadoを使ってみたいんですけどね。
+7シリーズFPGAを買ったら使える。
+ISE WebPACKではFPGA内蔵CPUのMicroBlazeに制限があるようです。
+</p>
+<ul class="org-ul">
+<li>とりあえずISE14.7をインストール。
+</li>
+<li>WebPACK licenseを発行。
+</li>
+<li>メールでXilinx.licが届く
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">2-2 回路設計とコンパイル</h4>
+<div class="outline-text-4" id="text-1-2-2">
+</div><div id="outline-container-sec-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1">7セグメント・デコーダの設計</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+<p>
+7セグが付いていないので、8bitの単体LEDを代わりに使用して結果を確認する。
+</p>
+<ul class="org-ul">
+<li>seg7dec.vを作成し、ボード付属CDの制約ファイル(SX-Card3.ucf)を読み込む。
+</li>
+<li>Implement Designで使用していないピンのERRORが出るので、led, dipsw以外の記述をコメントアウト。
+</li>
+<li>ISEで.binファイルを生成する。Generate Programming Fileのオプション-g Binaryを指定。
+</li>
+<li>RefApp7の"USBコンフィグ"タブで.binファイルを指定して書き込む。
+</li>
+<li>ボード上のSW5を切り替えて結果を確認。
+</li>
+</ul>
+<script src="https://gist.github.com/ktcsi/3ba75a51bc7aa43d8cafe6de942387af.js"></script>
+</div>
+<ul class="org-ul"><li><a id="sec-1-2-2-1-1" name="sec-1-2-2-1-1"></a>PranAhead, iMPACTを使用したコンフィグはJTAGケーブルが必要(?)。<br  /></li>
+<li><a id="sec-1-2-2-1-2" name="sec-1-2-2-1-2"></a>コンフィグROMを使用するにはダウンロードケーブルが必要。→自作例あり。<br  /></li></ul>
+</div>
+</div>
 </div>
 <div id="outline-container-sec-1-3" class="outline-3">
 <h3 id="sec-1-3">3 進んだ回路設計</h3>

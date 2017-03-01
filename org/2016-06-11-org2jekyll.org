@@ -27,3 +27,10 @@ GitHub Pages 静的サイトに関するメモ
 * tag and category
 参考にしたページ
 [[https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/][Use Tags and Categories in your Jekyll based Github Pages without plugins]]
+* source code
+GitHub Gistにコードを上げてEmbed欄から"Copy to clipboard"で貼り付け
+#+BEGIN_EXAMPLE
+ #+BEGIN_HTML
+  "paste"
+ #+END_HTML
+#+END_EXAMPLE

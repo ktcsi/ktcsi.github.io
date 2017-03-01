@@ -17,6 +17,8 @@ tag: [FPGA, Spartan-3, SX-Card3]
 #+begin_example
 小林 優(2013).  FPGAボードで学ぶ組込みシステム開発入門[Xilinx編] 技術評論社
 #+end_example
+この書籍を参考に手元のボード(SX-Card3)を使って、FPGAに入門。
+権利関係に気をつける。
 ** 1 FPGAボード
 *** 1-1 FPGA
 参考書の表1-1(Spartan-3E)に対応する表
@@ -49,7 +51,35 @@ LUT = Look Up Table
 | 汎用ユーザIO   |                        34x2 |
 | GPIO           |                        8bit |
 使用できるボードという理由ではじめたので、このボードでどこまで参考書を適用できるかは不明。
+*** 1-3 コンフィギュレーション
+**** USBコンフィギュレーション
+USB経由によって複数のコンフィグデータを瞬時に書き換えられる。
+SX-Card3ボードはリファレンスアプリケーション起動時に自動的にコンフィグする機能(オートコンフィグ機能)を持つ。
+**** コンフィグROM
+Spartan3A-DSP搭載ボードは、チップ外部のコンフィグ用ROMを用意。
+Xilinx専用のダウンロードケーブルを利用して書き込む。
+USBからコンフィグROMにプログラムすることはできない。
 ** 2 回路設計体験
+*** 2-1 Xilinx ISE
+Vivadoを使ってみたいんですけどね。
+7シリーズFPGAを買ったら使える。
+ISE WebPACKではFPGA内蔵CPUのMicroBlazeに制限があるようです。
+- とりあえずISE14.7をインストール。
+- WebPACK licenseを発行。
+- メールでXilinx.licが届く
+*** 2-2 回路設計とコンパイル
+**** 7セグメント・デコーダの設計
+7セグが付いていないので、8bitの単体LEDを代わりに使用して結果を確認する。
+- seg7dec.vを作成し、ボード付属CDの制約ファイル(SX-Card3.ucf)を読み込む。
+- Implement Designで使用していないピンのERRORが出るので、led, dipsw以外の記述をコメントアウト。
+- ISEで.binファイルを生成する。Generate Programming Fileのオプション-g Binaryを指定。
+- RefApp7の"USBコンフィグ"タブで.binファイルを指定して書き込む。
+- ボード上のSW5を切り替えて結果を確認。
+#+BEGIN_HTML
+<script src="https://gist.github.com/ktcsi/3ba75a51bc7aa43d8cafe6de942387af.js"></script>
+#+END_HTML
+***** PranAhead, iMPACTを使用したコンフィグはJTAGケーブルが必要(?)。
+***** コンフィグROMを使用するにはダウンロードケーブルが必要。→自作例あり。
 ** 3 進んだ回路設計
 ** 4 MicroBlaze MCS
 ** 5 MCSプログラミング

@@ -2,9 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>ktcsi blog</title>
-		<description>HWからSWまで</description>
+		<description>HWからSWまで[contact me](mailto:ktcsi151116@gmail.com)</description>
 		<link>https://kcsi.github.io/</link>
 		<atom:link href="https://kcsi.github.io//feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>KiCadで7セグ基板製作</title>
+				<description>&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;KiCadで7セグ基板製作&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;p&gt;
+FPGAボードで学ぶ組込みシステム開発入門[Sx-Card3]をすすめるにあたって、
+早速Sx-Card3をNexys3のような入門ボードに&quot;ダウングレード&quot;する必要が出てきました。
+Sx-Card3がFPGA入門に向いてないボードだということは承知の上でしたが、相当向いてないです。
+最近のトラ技(2016年6月号)で取り上げられていたPCB基板製作記事もあって、練習がてら基板を起こしてみようと思い立ちました
+（ブレッドボードによる試作が面倒くさい）。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;KiCad インストール&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;./images/2016-06-21-img01.png&quot; alt=&quot;2016-06-21-img01.png&quot; /&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;KiCad フットプリント作成&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-3&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-3&quot;&gt;KiCad PCBデータ作成・出力&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-4&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-4&quot;&gt;基板製作発注&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Tue, 21 Jun 2016 00:00:00 +0900</pubDate>
+				<link>https://kcsi.github.io//2016/06/kicadSeg7</link>
+				<guid isPermaLink="true">https://kcsi.github.io//2016/06/kicadSeg7</guid>
+			</item>
 		
 			<item>
 				<title>FPGAボードで学ぶ組込みシステム開発入門[SX-Card3編]</title>
@@ -14,6 +53,10 @@
 &lt;pre class=&quot;example&quot;&gt;
 小林 優(2013).  FPGAボードで学ぶ組込みシステム開発入門[Xilinx編] 技術評論社
 &lt;/pre&gt;
+&lt;p&gt;
+この書籍を参考に手元のボード(SX-Card3)を使って、FPGAに入門。
+権利関係に気をつける。
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&quot;outline-container-sec-1-1&quot; class=&quot;outline-3&quot;&gt;
 &lt;h3 id=&quot;sec-1-1&quot;&gt;1 FPGAボード&lt;/h3&gt;
@@ -167,9 +210,78 @@ LUT = Look Up Table
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-1-3&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-1-1-3&quot;&gt;1-3 コンフィギュレーション&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-1-1-3&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-1-3-1&quot; class=&quot;outline-5&quot;&gt;
+&lt;h5 id=&quot;sec-1-1-3-1&quot;&gt;USBコンフィギュレーション&lt;/h5&gt;
+&lt;div class=&quot;outline-text-5&quot; id=&quot;text-1-1-3-1&quot;&gt;
+&lt;p&gt;
+USB経由によって複数のコンフィグデータを瞬時に書き換えられる。
+SX-Card3ボードはリファレンスアプリケーション起動時に自動的にコンフィグする機能(オートコンフィグ機能)を持つ。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-1-3-2&quot; class=&quot;outline-5&quot;&gt;
+&lt;h5 id=&quot;sec-1-1-3-2&quot;&gt;コンフィグROM&lt;/h5&gt;
+&lt;div class=&quot;outline-text-5&quot; id=&quot;text-1-1-3-2&quot;&gt;
+&lt;p&gt;
+Spartan3A-DSP搭載ボードは、チップ外部のコンフィグ用ROMを用意。
+Xilinx専用のダウンロードケーブルを利用して書き込む。
+USBからコンフィグROMにプログラムすることはできない。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&quot;outline-container-sec-1-2&quot; class=&quot;outline-3&quot;&gt;
 &lt;h3 id=&quot;sec-1-2&quot;&gt;2 回路設計体験&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-2-1&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-1-2-1&quot;&gt;2-1 Xilinx ISE&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-1-2-1&quot;&gt;
+&lt;p&gt;
+Vivadoを使ってみたいんですけどね。
+7シリーズFPGAを買ったら使える。
+ISE WebPACKではFPGA内蔵CPUのMicroBlazeに制限があるようです。
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;とりあえずISE14.7をインストール。
+&lt;/li&gt;
+&lt;li&gt;WebPACK licenseを発行。
+&lt;/li&gt;
+&lt;li&gt;メールでXilinx.licが届く
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-2-2&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-1-2-2&quot;&gt;2-2 回路設計とコンパイル&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-1-2-2&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-2-2-1&quot; class=&quot;outline-5&quot;&gt;
+&lt;h5 id=&quot;sec-1-2-2-1&quot;&gt;7セグメント・デコーダの設計&lt;/h5&gt;
+&lt;div class=&quot;outline-text-5&quot; id=&quot;text-1-2-2-1&quot;&gt;
+&lt;p&gt;
+7セグが付いていないので、8bitの単体LEDを代わりに使用して結果を確認する。
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;seg7dec.vを作成し、ボード付属CDの制約ファイル(SX-Card3.ucf)を読み込む。
+&lt;/li&gt;
+&lt;li&gt;Implement Designで使用していないピンのERRORが出るので、led, dipsw以外の記述をコメントアウト。
+&lt;/li&gt;
+&lt;li&gt;ISEで.binファイルを生成する。Generate Programming Fileのオプション-g Binaryを指定。
+&lt;/li&gt;
+&lt;li&gt;RefApp7の&quot;USBコンフィグ&quot;タブで.binファイルを指定して書き込む。
+&lt;/li&gt;
+&lt;li&gt;ボード上のSW5を切り替えて結果を確認。
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script src=&quot;https://gist.github.com/ktcsi/3ba75a51bc7aa43d8cafe6de942387af.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;&lt;li&gt;&lt;a id=&quot;sec-1-2-2-1-1&quot; name=&quot;sec-1-2-2-1-1&quot;&gt;&lt;/a&gt;PranAhead, iMPACTを使用したコンフィグはJTAGケーブルが必要(?)。&lt;br  /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id=&quot;sec-1-2-2-1-2&quot; name=&quot;sec-1-2-2-1-2&quot;&gt;&lt;/a&gt;コンフィグROMを使用するにはダウンロードケーブルが必要。→自作例あり。&lt;br  /&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&quot;outline-container-sec-1-3&quot; class=&quot;outline-3&quot;&gt;
 &lt;h3 id=&quot;sec-1-3&quot;&gt;3 進んだ回路設計&lt;/h3&gt;
@@ -243,6 +355,19 @@ GitHub Pages 静的サイトに関するメモ
 参考にしたページ
 &lt;a href=&quot;https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/&quot;&gt;Use Tags and Categories in your Jekyll based Github Pages without plugins&lt;/a&gt;
 &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-5&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-5&quot;&gt;source code&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-5&quot;&gt;
+&lt;p&gt;
+GitHub Gistにコードを上げてEmbed欄から&quot;Copy to clipboard&quot;で貼り付け
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+#+BEGIN_HTML
+ &quot;paste&quot;
+#+END_HTML
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>

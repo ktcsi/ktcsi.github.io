@@ -1,0 +1,27 @@
+#+BEGIN_HTML
+---
+layout: post
+title: KiCadで7セグ基板製作
+published: true
+category: IT
+tag: [FPGA, Spartan-3, SX-Card3, KiCad, PCB]
+---
+#+END_HTML
+#+TITLE:
+#+DATE: <2016-06-21 Tue>
+#+AUTHOR: ktcsi
+#+EMAIL: ktcsi151116@gmail.com
+#+OPTIONS: toc:nil num:nil
+#+SELECT_TAGS: export
+* KiCadで7セグ基板製作
+FPGAボードで学ぶ組込みシステム開発入門[Sx-Card3]をすすめるにあたって、
+早速Sx-Card3をNexys3のような入門ボードに"ダウングレード"する必要が出てきました。
+Sx-Card3がFPGA入門に向いてないボードだということは承知の上でしたが、相当向いてないです。
+最近のトラ技(2016年6月号)で取り上げられていたPCB基板製作記事もあって、練習がてら基板を起こしてみようと思い立ちました
+（ブレッドボードによる試作が面倒くさい）。
+** KiCad インストール
+kicad-4.0.1.dmgを
+   [[./images/2016-06-21-img01.png]]
+** KiCad フットプリント作成
+** KiCad PCBデータ作成・出力
+** 基板製作発注

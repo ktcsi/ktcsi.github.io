@@ -1,7 +1,7 @@
 # Jekyll configuration
 
 name: ktcsi blog
-description: HWからSWまで
+description: HWからSWまで[contact me](mailto:ktcsi151116@gmail.com)
 
 # url is currently only used only for the RSS feed in feed.xml
 url: https://kcsi.github.io/
